@@ -1,6 +1,6 @@
 ﻿// URL: https://leetcode.com/problems/two-sum/
 
-public class Solution
+public class TwoSumExercice
 {
     public int[] TwoSum(int[] nums, int target)
     {
