@@ -7,14 +7,11 @@
         {
             // Arrange
             IsPalindromeExercice isPalindromeExercice = new IsPalindromeExercice();
-            int case_1 = 121;
-            int case_2 = -121;
-            int case_3 = 10;
 
             // Act
-            var isPalindrome_1 = isPalindromeExercice.IsPalindrome(case_1);
-            var isPalindrome_2 = isPalindromeExercice.IsPalindrome(case_2);
-            var isPalindrome_3 = isPalindromeExercice.IsPalindrome(case_3);
+            var isPalindrome_1 = isPalindromeExercice.IsPalindrome(121);
+            var isPalindrome_2 = isPalindromeExercice.IsPalindrome(-121);
+            var isPalindrome_3 = isPalindromeExercice.IsPalindrome(10);
 
             // Assert
             Assert.True(isPalindrome_1);
