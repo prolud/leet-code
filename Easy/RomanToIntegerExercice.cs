@@ -1,5 +1,7 @@
 ﻿//URL: https://leetcode.com/problems/roman-to-integer/
 
+using System.Runtime.CompilerServices;
+
 public class RomanToIntegerExercice
 {
     public enum RomanSymbols
@@ -13,33 +15,25 @@ public class RomanToIntegerExercice
         M = 1000,
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
     public int RomanToInt(string s)
     {
-        var sumTotal = 0;
-        int previousValue = 0;
-        int memoryCell = 0;
+        var total = 0;
+        int lastValue = 0;
 
-        for (int i = 0; i < s.Length; i++)
+        for (int i = s.Length - 1; i >= 0; i--)
         {
             var currentValue = (int)Enum.Parse(typeof(RomanSymbols), $"{s[i]}");
+            total += currentValue;
 
-            if (previousValue > currentValue && memoryCell != 0)
+            if (currentValue < lastValue)
             {
-                sumTotal += memoryCell;
-                memoryCell = 0;
+                total -= (currentValue * 2);
             }
-            if (previousValue == currentValue || memoryCell == 0)
-            {
-                memoryCell += currentValue;
-            }
-            if (previousValue < currentValue && i > 0)
-            {
-                sumTotal += (currentValue - memoryCell);
-                memoryCell = 0;
-            }
-            previousValue = currentValue;
+
+            lastValue = currentValue;
         }
 
-        return sumTotal + memoryCell;
+        return total;
     }
 }
