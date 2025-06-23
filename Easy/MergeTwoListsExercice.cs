@@ -1,4 +1,7 @@
-﻿public class ListNode
+﻿namespace Easy;
+
+
+public class ListNode
 {
     public int val;
     public ListNode next;
@@ -8,7 +11,7 @@
         this.next = next;
     }
 }
-public class MergeTwoSortedListsExercice
+public class MergeTwoListsExercice
 {
     public ListNode MergeTwoLists(ListNode list1, ListNode list2)
     {
